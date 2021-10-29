@@ -6,6 +6,8 @@ data_file = 'fifa22data.csv'
 df = pd.read_csv(data_file, index_col='FullName')
 
 
+st.subheader('Streamlit App by [David Smiley](https://www.linkedin.com/in/david-m-smiley/)')
+
 #User Selection _____________________________
 
 player_1 = st.selectbox('Type in First Player: ', options=list(df.index.values))
