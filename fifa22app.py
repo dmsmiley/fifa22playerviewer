@@ -53,7 +53,7 @@ with col2_2:
     st.image(flag_1, use_column_width=True)
 
 with col3_2:
-    st.write('<center>Centered text</center>')
+    st.markdown('<center>Centered text</center>')
     st.image(club_logo_2, use_column_width=True)
 
 with col4_2:
