@@ -45,8 +45,8 @@ flag_2 = df.loc[player_2]['Flag']
 col1_2, col2_2, col3_2, col4_2 = st.columns(4)
 
 with col1_2:
-    st.markdown("## Club:")
-    st.write(df.loc[player_1]['Club'])
+    st.subheader("Club:")
+    st.markdown("### {df.loc[player_1]['Club']}")
     st.image(club_logo_1, use_column_width=True)
     
 with col2_2:
