@@ -51,17 +51,17 @@ with col1_2:
     
 with col2_2:
     st.subheader("Nationality:")
-    st.write(df.loc[player_1]['Nationality'])
+    st.markdown("##### {}".format(df.loc[player_1]['Nationality']))
     st.image(flag_1, use_column_width=True)
 
 with col3_2:
     st.subheader("Club:")
-    st.write(df.loc[player_2]['Club'])
+    st.markdown("##### {}".format(df.loc[player_2]['Club']))
     st.image(club_logo_2, use_column_width=True)
 
 with col4_2:
     st.subheader("Nationality:")
-    st.write(df.loc[player_2]['Nationality'])
+    st.markdown("##### {}".format(df.loc[player_2]['Nationality']))
     st.image(flag_2, use_column_width=True)
 
 #Main Stats_____________________________________________
