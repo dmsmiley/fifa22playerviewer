@@ -45,19 +45,23 @@ flag_2 = df.loc[player_2]['Flag']
 col1_2, col2_2, col3_2, col4_2 = st.columns(4)
 
 with col1_2:
-    st.subheader(df.loc[player_1]['Club'])
+    st.subheader("Club:")
+    st.write(df.loc[player_1]['Club'])
     st.image(club_logo_1, use_column_width=True)
     
 with col2_2:
-    st.subheader(df.loc[player_1]['Nationality'])
+    st.subheader("Nationality:")
+    st.write(df.loc[player_1]['Nationality'])
     st.image(flag_1, use_column_width=True)
 
 with col3_2:
-    st.subheader(df.loc[player_2]['Club'])
+    st.subheader("Club:")
+    st.write(df.loc[player_2]['Club'])
     st.image(club_logo_2, use_column_width=True)
 
 with col4_2:
-    st.subheader(df.loc[player_2]['Nationality'])
+    st.subheader("Nationality:")
+    st.write(df.loc[player_2]['Nationality'])
     st.image(flag_2, use_column_width=True)
 
 #Main Stats_____________________________________________
