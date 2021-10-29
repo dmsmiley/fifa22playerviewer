@@ -5,7 +5,64 @@ import plotly.graph_objects as go
 data_file = 'fifa22data.csv'
 df = pd.read_csv(data_file, index_col='FullName')
 
-new_df = df.loc[['Lionel Messi','Stephen Black']][['PaceTotal','ShootingTotal', 'PassingTotal', 'DribblingTotal', 'DefendingTotal','PhysicalityTotal']]
+
+#User Selection _____________________________
+
+player_1 = st.selectbox('Select First Player: ', options=list(df.index.values))
+player_2 = st.selectbox('Select Second Player: ', options=list(df.index.values),
+                        index=1)
+                        
+#Player Display_________________________________________
+
+photo_1 = df.loc[player_1]['PhotoUrl']
+photo_1 = photo_1.replace("_180","_240")
+photo_1 = photo_1.replace("com","net")
+
+photo_2 = df.loc[player_2]['PhotoUrl']
+photo_2 = photo_2.replace("_180","_240")
+photo_2 = photo_2.replace("com","net")
+
+
+col1_1, col2_1 = st.columns(2)
+
+with col1_1:
+    st.header(player_1)
+    st.image(photo_1, use_column_width=True)
+
+
+with col2_1:
+    st.header(player_2)
+    st.image(photo_2, use_column_width=True)
+
+
+#Player Information_____________________________________
+
+club_logo_1 = df.loc[player_1]['Club Logo']
+flag_1 = df.loc[player_1]['Flag']
+
+club_logo_2 = df.loc[player_2]['Club Logo']
+flag_2 = df.loc[player_2]['Flag']
+
+
+col1_2, col2_2, col3_2, col4_2 = st.columns(4)
+
+with col1_2:
+    st.write(df.loc[player_1]['Club'])
+    st.image(club_logo_1, use_column_width=True)
+    
+with col2_2:
+    st.write(df.loc[player_1]['Nationality'])
+    st.image(flag_1, use_column_width=True)
+
+with col3_2:
+    st.image(club_logo_2, use_column_width=True)
+
+with col4_2:
+    st.image(flag_2, use_column_width=True)
+
+#Main Stats_____________________________________________
+
+new_df = df.loc[[player_1,player_2]][['PaceTotal','ShootingTotal', 'PassingTotal', 'DribblingTotal', 'DefendingTotal','PhysicalityTotal']]
 
 categories = list(new_df.columns)
 
@@ -36,3 +93,6 @@ fig.update_layout(
   )
 
 st.plotly_chart(fig)
+
+
+#Row 1 Stats______________________________________________
