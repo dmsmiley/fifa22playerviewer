@@ -53,7 +53,7 @@ with col2_2:
     st.image(flag_1, use_column_width=True)
 
 with col3_2:
-    st.markdown('<center>Centered text</center>')
+    <div style="text-align: center"> df.loc[player_2]['Club'] </div>
     st.image(club_logo_2, use_column_width=True)
 
 with col4_2:
