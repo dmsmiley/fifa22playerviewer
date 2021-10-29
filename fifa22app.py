@@ -46,7 +46,7 @@ col1_2, col2_2, col3_2, col4_2 = st.columns(4)
 
 with col1_2:
     st.subheader("Club:")
-    st.markdown("### {df.loc[player_1]['Club']}")
+    st.markdown("##### {}".format(df.loc[player_1]['Club']))
     st.image(club_logo_1, use_column_width=True)
     
 with col2_2:
