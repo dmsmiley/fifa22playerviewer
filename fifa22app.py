@@ -100,3 +100,13 @@ st.plotly_chart(fig)
 
 
 #Row 1 Stats______________________________________________
+
+
+
+
+
+#Sidebar
+
+st.sidebar.markdown("### Need Help Finding a Player?")
+country_club = st.sidebar.selectbox('What Country is Their Club In?', list(df['Club Country']))
+
