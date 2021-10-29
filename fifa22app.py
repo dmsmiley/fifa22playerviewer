@@ -104,8 +104,27 @@ st.plotly_chart(fig)
 #Row 1 Stats______________________________________________
 
 
+expander = st.expander(label='Click for Additional Stats')
+
+add_stats = ['Crossing', 'Finishing', 'HeadingAccuracy',
+       'ShortPassing', 'Volleys', 'Dribbling', 'Curve', 'FKAccuracy',
+       'LongPassing', 'BallControl', 'Acceleration', 'SprintSpeed', 'Agility',
+       'Reactions', 'Balance', 'ShotPower', 'Jumping', 'Stamina', 'Strength',
+       'LongShots', 'Aggression', 'Interceptions', 'Positioning', 'Vision',
+       'Penalties', 'Composure', 'Marking', 'StandingTackle', 'SlidingTackle']
+
+with expander:
+
+	stats_df = df.loc[[player_1,player_2]][add_stats].reset_index()
+
+	player_1_stat_list = list(stats_df.iloc[0][1:])
+	player_2_stat_list = list(stats_df.iloc[1][1:])
+	stats = list(stats_df.columns[1:])
 
 
+	display_df = pd.DataFrame(list(zip(player_1_stat_list,player_2_stat_list,stats)), columns = [player_1,player_2,"Stats"])[[player_1, 'Stats', player_2]]
+
+	st.dataframe(display_df.assign(hack='').set_index('hack'))
 
 #Sidebar
 
