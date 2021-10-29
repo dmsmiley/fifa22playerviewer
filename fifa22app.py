@@ -15,12 +15,10 @@ player_2 = st.selectbox('Select Second Player: ', options=list(df.index.values),
 #Player Display_________________________________________
 
 photo_1 = df.loc[player_1]['PhotoUrl']
-photo_1 = photo_1.replace("_180","_240")
-photo_1 = photo_1.replace("com","net")
+
 
 photo_2 = df.loc[player_2]['PhotoUrl']
-photo_2 = photo_2.replace("_180","_240")
-photo_2 = photo_2.replace("com","net")
+
 
 
 col1_1, col2_1 = st.columns(2)
