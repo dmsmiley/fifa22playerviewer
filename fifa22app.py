@@ -53,10 +53,11 @@ with col2_2:
     st.image(flag_1, use_column_width=True)
 
 with col3_2:
-    st.markdown('<div style="text-align: center"> {} </div>'.format(df.loc[player_2]['Club']))
+    st.write(df.loc[player_2]['Club'])
     st.image(club_logo_2, use_column_width=True)
 
 with col4_2:
+    st.write(df.loc[player_2]['Nationality'])
     st.image(flag_2, use_column_width=True)
 
 #Main Stats_____________________________________________
